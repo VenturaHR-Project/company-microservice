@@ -1,5 +1,6 @@
 export enum VacancyStatus {
-    enabled = "Ativado",
-    Disabled = "Desativado"
-
+    Expired = "Expired",
+    Published = "Publicada",
+    canceled = "Cancelada",
+    Fineshed = "Finalizada"
 }

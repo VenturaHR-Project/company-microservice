@@ -70,7 +70,7 @@ const schema = new Schema<IVancancy>({
         type: VacancyStatus,
         require: true,
         trim: true,
-        default: VacancyStatus.enabled
+        default: VacancyStatus.Published
     },
     expectedSkills: [{
         description: {
