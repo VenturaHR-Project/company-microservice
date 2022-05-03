@@ -1,5 +1,5 @@
 import { Document } from "mongoose"
-import { Vacancy } from "../../domain/entities/Vacancy";
+import { Vacancy } from "../../domain/entities/Vacancy/Vacancy";
 import { ICreateVacancyRequestDTO } from "../../useCases/createVacancy/ICreateVacancyRequestDTO";
 import { ICompanyRepository } from "../ICompanyRepository";
 

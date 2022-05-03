@@ -1,13 +1,13 @@
 import mongoose, { Document, Schema } from "mongoose"
-import { HiringPeriod } from "../enum/ HiringPeriod"
-import { JobType } from "../enum/JobType"
-import { Profile } from "../enum/Profile"
-import { VacancyStatus } from "../enum/VacancyStatus"
+import { HiringPeriod } from "../../enum/ HiringPeriod"
+import { JobType } from "../../enum/JobType"
+//import { DesiredMinimumProfile } from "../enum/DesiredMinimumProfile"
+import { VacancyStatus } from "../../enum/VacancyStatus"
 
 type ExpectedSkills = {
-    description: String
-    profile: Profile
-    height: Number
+    description: string
+    desiredMinimumProfile: number
+    height: number
 }
 
 interface IVancancy extends Document {
@@ -19,8 +19,9 @@ interface IVancancy extends Document {
     city: string
     jobType: JobType
     hiringPeriod: HiringPeriod
+    score: number
     status: VacancyStatus
-    expectedSkills: ExpectedSkills
+    expectedSkills: ExpectedSkills[]
     createdAt: string
     expiresAt: string
 }
@@ -66,6 +67,10 @@ const schema = new Schema<IVancancy>({
         require: true,
         trim: true
     },
+    score: {
+        type: Number,
+        require: true
+    },
     status: {
         type: VacancyStatus,
         require: true,
@@ -78,10 +83,11 @@ const schema = new Schema<IVancancy>({
             require: true,
             trim: true
         },
-        profile: {
-            type: Profile,
+        desiredMinimumProfile: {
+            type: Number,
             require: true,
-            trim: true
+            min: 1,
+            max: 5
         },
         height: {
             type: Number,

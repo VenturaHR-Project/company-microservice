@@ -1,4 +1,4 @@
-import { ExpectedSkills } from "../../domain/entities/Vacancy"
+import { ExpectedSkills } from "../../domain/entities/Vacancy/Vacancy"
 import { HiringPeriod } from "../../domain/enum/ HiringPeriod"
 import { JobType } from "../../domain/enum/JobType"
 import { VacancyStatus } from "../../domain/enum/VacancyStatus"
@@ -12,8 +12,9 @@ export interface ICreateVacancyRequestDTO{
     city: string
     jobType: JobType
     hiringPeriod: HiringPeriod
+    score: number
     status: VacancyStatus
-    expectedSkills: ExpectedSkills
+    expectedSkills: ExpectedSkills[]
     createdAt: string
     expiresAt: string
 }

@@ -1,4 +1,4 @@
-import { ICreateVacancyRequestDTO } from "../../useCases/createVacancy/ICreateVacancyRequestDTO"
+import { ICreateVacancyRequestDTO } from "../../../useCases/createVacancy/ICreateVacancyRequestDTO"
 import { Vacancy } from "./Vacancy"
 
 export class VacancyFactory {
