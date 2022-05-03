@@ -1,7 +1,6 @@
 import mongoose, { Document, Schema } from "mongoose"
 import { HiringPeriod } from "../../enum/ HiringPeriod"
 import { JobType } from "../../enum/JobType"
-//import { DesiredMinimumProfile } from "../enum/DesiredMinimumProfile"
 import { VacancyStatus } from "../../enum/VacancyStatus"
 
 type ExpectedSkills = {
