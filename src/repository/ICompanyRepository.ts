@@ -4,4 +4,5 @@ import { ICreateVacancyRequestDTO } from "../useCases/createVacancy/ICreateVacan
 export interface ICompanyRepository {
     createVacancy(data: ICreateVacancyRequestDTO): Promise<void>
     fetchVacancies(): Promise<Document[]>
+    fetchVacanciesByCompany(name: string): Promise<Document[]>
 }

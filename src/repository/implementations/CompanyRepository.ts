@@ -4,6 +4,11 @@ import { ICreateVacancyRequestDTO } from "../../useCases/createVacancy/ICreateVa
 import { ICompanyRepository } from "../ICompanyRepository";
 
 export class CompanyRepository implements ICompanyRepository {
+    async fetchVacanciesByCompany(company: string): Promise<Document[]> {
+        const response = await Vacancy.find({ company })
+        return response
+    }
+
     async fetchVacancies(): Promise<Document[]>  {
         const response = await Vacancy.find()
         return response

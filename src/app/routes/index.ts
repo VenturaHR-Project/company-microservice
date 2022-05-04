@@ -1,6 +1,7 @@
 import { Router } from "express"
 import { createVacancyController } from "../../useCases/createVacancy"
 import { fetchVacanciesController } from "../../useCases/fetchVacancies"
+import { fetchVacanciesByCompanyController } from "../../useCases/fetchVacanciesByCompany"
 
 const routes = Router()
 
@@ -12,9 +13,9 @@ routes.get("/companys", (request, response) => {
     return fetchVacanciesController.handle(request, response)
 })
 
-// routes.get("/users/:_id", (request, response) => {
-//     return fetchUserController.handle(request, response)
-// })
+routes.get("/companys/:company", (request, response) => {
+    return fetchVacanciesByCompanyController.handle(request, response)
+})
 
 // routes.put("/users/:_id", (request, response) => {
 //     return editUserController.handle(request, response)
