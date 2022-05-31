@@ -56,7 +56,7 @@ const schema = new Schema<IVancancy>({
         require: true,
         trim: true
     },
-    JobType: {
+    jobType: {
         type: JobType,
         require: true,
         trim: true
