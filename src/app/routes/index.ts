@@ -17,12 +17,4 @@ routes.get("/companys/:company", (request, response) => {
     return fetchVacanciesByCompanyController.handle(request, response)
 })
 
-// routes.put("/users/:_id", (request, response) => {
-//     return editUserController.handle(request, response)
-// })
-
-// routes.put("/users/admin/:_id", (request, response) => {
-//     return manageAccountStateController.handle(request, response)
-// })
-
 export default routes
